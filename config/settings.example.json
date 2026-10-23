@@ -1,0 +1,155 @@
+{
+ "_readme": "Main settings. setup copies this file to config/settings.json; edit that copy. Regex lists are Python regular expressions, case-insensitive (write \\b as \\\\b). See docs/configuration.md.",
+
+ "candidate": {
+  "_readme": "YOUR details. The signature is added under every cover letter. cvs: id -> file, relative to cv_root (the cvs/ folder by default). Describe when to use each CV in config/profile.md.",
+  "name": "Your Name",
+  "signature": ["Kind regards,", "Your Name", "+00 0000 000000 | your.email@example.com"],
+  "cv_root": "cvs",
+  "cvs": {
+   "general": "My CV.pdf",
+   "technical": "My CV Technical.pdf"
+  }
+ },
+
+ "_regions_readme": "Countries to search, most important first. Built-in names: United Kingdom, United Arab Emirates, Ireland, United States, Canada, Australia, New Zealand, Germany, France, Netherlands, Switzerland, Spain, Singapore, India, Saudi Arabia, Qatar. Any other country works too; add its cities to region_patterns so locations like 'Lisbon' are recognised.",
+ "regions": ["United Kingdom"],
+ "region_patterns": {
+  "_example_Portugal": "portugal|lisbon|lisboa|porto"
+ },
+
+ "searches": {
+  "_readme": "boolean: LinkedIn queries (support AND/OR/quotes/brackets), each run once per country. simple: plain keyword searches for the API sources (Reed, Adzuna, Jooble).",
+  "boolean": [
+   "(\"Graduate\" OR \"Junior\") AND (\"Data Analyst\" OR \"Business Analyst\" OR \"Operations Analyst\")",
+   "(\"Graduate\" OR \"Junior\") AND (\"Consultant\" OR \"Strategy Analyst\")",
+   "(\"Business Development Analyst\" OR \"Commercial Analyst\" OR \"Pricing Analyst\")",
+   "(\"Digital Transformation\" OR \"Process Improvement\" OR \"Automation\") AND (Analyst OR Graduate OR Associate)"
+  ],
+  "simple": [
+   "graduate analyst",
+   "junior data analyst",
+   "business analyst graduate",
+   "graduate consultant",
+   "commercial analyst",
+   "strategy analyst",
+   "operations analyst"
+  ]
+ },
+
+ "filters": {
+  "_readme": "title_keep: a title must match one of these. title_exclude: and none of these. description_reject: groups of phrases that drop a job (a phrase is ignored when negated, e.g. 'no security clearance required'). max_years_experience: drop adverts that require more.",
+  "max_years_experience": 3,
+  "title_keep": [
+   "analyst", "analys", "consult", "data", "\\bai\\b", "automation", "strategy", "strategist", "business",
+   "commercial", "pricing", "operations", "transformation", "graduate", "insight", "associate", "\\bbi\\b",
+   "intelligence", "finance", "financial"
+  ],
+  "title_exclude": [
+   "\\bsenior\\b", "\\bsr\\.?\\b", "\\blead\\b(?!\\s*gen)", "\\bprincipal\\b", "\\bdirector\\b", "\\bhead of\\b",
+   "\\bvp\\b", "\\bavp\\b", "vice president", "\\bchief\\b", "manager ii", "telesales", "cold call",
+   "(?:fashion|beauty|retail|sales|store) consultant", "nationals? only", "\\bsc cleared\\b", "\\bdv cleared\\b"
+  ],
+  "description_reject": {
+   "_readme_note": "Each key is a reason shown in the triage file. Delete groups that do not apply to you; add your own (e.g. a language you do not speak: \"fluent in german\").",
+   "nationality": [
+    "british citizens?(?:hip)?(?: only| is required| required)", "uk nationals? only", "sole (?:uk|british) national"
+   ],
+   "clearance": [
+    "security clearance", "sc clearance", "dv clearance", "sc cleared", "dv cleared", "developed vetting",
+    "eligible for sc", "obtain sc"
+   ],
+   "pay": ["commission[- ]only", "unpaid(?! (?:leave|time off|overtime|sabbatical|break|volunteer|days?))", "no basic salary"]
+  },
+  "agency_names": [
+   "recruit", "talent", "staffing", "\\bsearch\\b", "resourc", "\\bhr\\b", "careers\\b", "headhunt", "personnel",
+   "hays", "adecco", "randstad", "michael page", "page executive", "robert half", "robert walters", "harnham",
+   "lorien", "marks sattin", "\\breed\\b", "morgan mckinley", "cooper fitch", "targetjobs", "investigo", "aquent",
+   "jobgether", "manpower", "harrington starr", "mthree", "bayt", "naukri"
+  ],
+  "agency_phrases": [
+   "our client is", "our client,", "our client -", "my client", "we are partnering with", "we're partnering with",
+   "working exclusively with", "on behalf of (?:our|a|an) client", "we are recruiting for", "we're recruiting for",
+   "is recruiting on behalf"
+  ],
+  "flags": {
+   "_readme_note": "Tags shown in the triage file. Give them points in triage.flag_points.",
+   "grad-scheme": ["graduate (?:scheme|programme|program)", "analyst (?:programme|program)", "early careers"],
+   "visa-offered": ["visa (?:sponsorship|provided|is provided|included)", "employment visa", "relocation (?:package|support|assistance)"],
+   "needs-long-term-rtw": ["right to work in the uk without (?:any )?(?:time )?restrictions?", "permanent right to work",
+                            "indefinite leave to remain", "\\bilr\\b", "settled status"],
+   "cold-calling": ["cold[- ]call", "outbound calls", "telesales"],
+   "python-sql": ["\\bpython\\b", "\\bsql\\b"],
+   "internship": ["\\bintern(?:ship)?\\b", "placement year", "summer analyst"],
+   "builder": ["write (?:production )?code", "workflow automation", "automate (?:workflows|processes)", "\\bapis?\\b",
+               "data pipelines?", "\\bllms?\\b", "ai agents?"],
+   "admin-heavy": ["meeting (?:notes|minutes)", "minute[- ]taking", "status reports?", "data entry"],
+   "sales-target": ["sales targets?", "commission[- ]based", "sales quota"]
+  }
+ },
+
+ "dedupe": {
+  "_readme": "A job with the same company + title + country as one seen in the last N days is a repost or a duplicate from another site.",
+  "repost_window_days": 30
+ },
+
+ "triage": {
+  "_readme": "Points used only to SORT the triage list; Claude still decides. See docs/configuration.md.",
+  "top_n": 80,
+  "snippet_chars": 220,
+  "title_points": {
+   "graduate": 2, "junior": 1.5, "entry": 1.5, "analyst": 1.5, "consult": 1, "strategy": 1, "commercial": 1,
+   "pricing": 1, "transformation": 1, "data": 1, "automation": 1, "associate": 0.5, "trainee": 0.5,
+   "intern": -1.5, "assistant": -0.5, "sales": -1.5, "coordinator": -1, "secretary|receptionist|\\badmin": -2
+  },
+  "city_points": {"london": 0.5},
+  "flag_points": {"grad-scheme": 1, "visa-offered": 0.5, "python-sql": 0.5, "builder": 1, "cold-calling": -2,
+                  "needs-long-term-rtw": 0, "internship": -1, "admin-heavy": -1.5, "sales-target": -1.5},
+  "agency_points": -2,
+  "salary_points": {"meets": 1, "below": -1},
+  "_salary_targets_readme": "Your minimum gross salary per year. First match wins: currency, then optional region and optional location (a word in the job's location). Currencies read from adverts: GBP, USD, EUR, AED.",
+  "salary_targets": [
+   {"currency": "GBP", "location": "london", "per_year": 35000},
+   {"currency": "GBP", "per_year": 28000}
+  ]
+ },
+
+ "sources": {
+  "linkedin": {
+   "_readme": "Public LinkedIn job search, no login. experience_levels: 1 internship, 2 entry, 3 associate, 4 mid-senior.",
+   "enabled": true,
+   "max_results_per_search": 100,
+   "experience_levels": "1,2,3",
+   "posted_within_hours": 24
+  },
+  "reed": {
+   "_readme": "UK only. Needs a free API key from https://www.reed.co.uk/developers/jobseeker (put it in config/secrets.json), then set enabled to true.",
+   "enabled": false,
+   "results_per_search": 100,
+   "max_age_days": 2
+  },
+  "adzuna": {
+   "_readme": "UK, US, most of Europe, Canada, Australia, India, Singapore and more (not the UAE). Needs a free app_id + app_key from https://developer.adzuna.com (config/secrets.json).",
+   "enabled": false,
+   "results_per_search": 50,
+   "max_age_days": 2
+  },
+  "jooble": {
+   "_readme": "Aggregator in many countries (in the UAE it includes Bayt, GulfTalent...). Needs a free key: https://jooble.org/api/about (config/secrets.json). One host per country, e.g. uk.jooble.org, ae.jooble.org, de.jooble.org.",
+   "enabled": false,
+   "results_per_search": 50,
+   "max_age_days": 2,
+   "hosts": {"United Kingdom": "uk.jooble.org"},
+   "locations": {"United Kingdom": ""}
+  },
+  "ats": {
+   "_readme": "Employers' own job boards (Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Teamtailor, Pinpoint, Oracle). No key needed. The employers are in config/companies.json. search_terms are used for the big boards (Workday, Oracle) that are searched instead of read in full.",
+   "enabled": true,
+   "max_age_days": 3,
+   "search_terms": ["graduate", "analyst", "consultant", "associate"],
+   "workday_pages": 2,
+   "extra_title_exclude": ["^(?!.*\\b(?:graduate|trainee|junior)\\b).*\\bmanager\\b", "\\bstaff\\b", "\\bhead\\b",
+                           "\\bbusiness partner\\b", "\\barchitect\\b", "\\bspecialist ii+\\b", "\\b(?:ii|iii|iv)\\b$"]
+  }
+ }
+}

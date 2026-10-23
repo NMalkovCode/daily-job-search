@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python -m jobsearch *)",
+      "PowerShell(.venv/Scripts/python -m jobsearch *)",
+      "Bash(.venv/Scripts/python -m pytest *)",
+      "PowerShell(.venv/Scripts/python -m pytest *)",
+      "Bash(.venv/bin/python -m jobsearch *)",
+      "Bash(.venv/bin/python -m pytest *)",
+      "WebSearch",
+      "WebFetch",
+      "Edit(/data/scored/**)"
+    ],
+    "deny": [
+      "Edit(/data/raw/**)",
+      "Edit(/data/state/**)"
+    ]
+  }
+}

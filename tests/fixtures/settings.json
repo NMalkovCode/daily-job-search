@@ -1,0 +1,437 @@
+{
+ "_readme": "Settings used by the automated tests only (a fixed UAE + UK set-up). Your own settings are config/settings.json.",
+ "candidate": {
+  "name": "Alex Example",
+  "signature": [
+   "Kind regards,",
+   "Alex Example",
+   "+44 0000 000000 | alex@example.com"
+  ],
+  "cv_root": "cvs",
+  "cvs": {
+   "consulting": "Consulting CV.pdf",
+   "finance": "Finance CV.pdf",
+   "technical": "Technical CV.pdf"
+  }
+ },
+ "regions": [
+  "United Arab Emirates",
+  "United Kingdom"
+ ],
+ "searches": {
+  "_readme": "boolean: LinkedIn (supports AND/OR/quotes). simple: plain keyword searches for the API sources.",
+  "boolean": [
+   "(\"Graduate\" OR \"Junior\") AND (\"Consultant\" OR \"Project Controls\" OR \"Strategy Analyst\")",
+   "(\"Quantitative Analyst\" OR \"Quant\" OR \"Data Analyst\") AND (Python OR SQL) AND (Finance OR FinTech OR Trading)",
+   "(\"AI Automation\" OR \"AI Consultant\" OR \"AI Integration\" OR \"AI Solutions\" OR \"AI Strategist\" OR \"AI Workflow\" OR \"Forward Deployed\" OR \"Deployment Strategist\")",
+   "(\"Graduate\" OR \"Junior\") AND (\"Data Analyst\" OR \"Business Analyst\" OR \"Operations Analyst\")",
+   "(\"Business Development Analyst\" OR \"Commercial Analyst\" OR \"Pricing Analyst\" OR \"Strategy Analyst\")",
+   "(\"Digital Transformation\" OR \"Process Improvement\" OR \"Automation\") AND (Analyst OR Graduate OR Associate)"
+  ],
+  "simple": [
+   "graduate analyst",
+   "graduate consultant",
+   "junior data analyst",
+   "business analyst graduate",
+   "business development analyst",
+   "commercial analyst",
+   "pricing analyst",
+   "strategy analyst",
+   "operations analyst",
+   "AI automation",
+   "AI consultant",
+   "digital transformation analyst",
+   "project controls graduate"
+  ]
+ },
+ "filters": {
+  "max_years_experience": 3,
+  "title_keep": [
+   "analyst",
+   "analys",
+   "consult",
+   "data",
+   "\\bai\\b",
+   "automation",
+   "strategy",
+   "strategist",
+   "business",
+   "commercial",
+   "pricing",
+   "operations",
+   "transformation",
+   "graduate",
+   "insight",
+   "associate",
+   "\\bbi\\b",
+   "intelligence",
+   "\\bquant\\b",
+   "quantitative",
+   "project control",
+   "cost control",
+   "demand plann",
+   "commercial plann",
+   "forward[- ]deployed",
+   "deployment strateg",
+   "workflow",
+   "\\bfp&a\\b",
+   "finance",
+   "financial",
+   "аналитик",
+   "консультант"
+  ],
+  "title_exclude": [
+   "\\bsenior\\b",
+   "\\bsr\\.?\\b",
+   "\\blead\\b(?!\\s*gen)",
+   "\\bprincipal\\b",
+   "\\bdirector\\b",
+   "\\bhead of\\b",
+   "\\bvp\\b",
+   "\\bavp\\b",
+   "vice president",
+   "\\bchief\\b(?!\\s+operating\\s+office\\b)",
+   "manager ii",
+   "\\bteacher\\b",
+   "\\btutor\\b",
+   "\\bnurse\\b",
+   "\\bdriver\\b",
+   "telesales",
+   "cold call",
+   "(?:fashion|beauty|retail|sales|store) consultant",
+   "\\bstore\\b",
+   "arabic speaker",
+   "nationals? only",
+   "emirati",
+   "emir[ai]ti[sz]",
+   "uae national",
+   "\\bsc cleared\\b",
+   "\\bdv cleared\\b"
+  ],
+  "description_reject": {
+   "nationality": [
+    "(?:uae|gcc|emirati|qatari|saudi) nationals?(?: only)?",
+    "(?:uae|united arab emirates|emirati|gcc) nationality",
+    "(?:uae|emirati) passport holders?",
+    "emir[ai]ti[sz](?:ation|ed)",
+    "family book",
+    "\\bnafis\\b",
+    "british citizens?(?:hip)?(?: only| is required| required)",
+    "uk nationals? only",
+    "sole (?:uk|british) national"
+   ],
+   "arabic": [
+    "arabic (?:is |language is )?(?:mandatory|essential|required|a must)",
+    "fluent in arabic",
+    "fluency in arabic",
+    "native arabic",
+    "arabic speaking",
+    "arabic speaker",
+    "bilingual \\(?arabic"
+   ],
+   "clearance": [
+    "security clearance",
+    "sc clearance",
+    "dv clearance",
+    "sc cleared",
+    "dv cleared",
+    "developed vetting",
+    "eligible for sc",
+    "obtain sc"
+   ],
+   "pay": [
+    "commission[- ]only",
+    "unpaid(?! (?:leave|time off|overtime|sabbatical|break|volunteer|days?))",
+    "no basic salary"
+   ]
+  },
+  "agency_names": [
+   "recruit",
+   "talent",
+   "staffing",
+   "\\bsearch\\b",
+   "resourc",
+   "\\bhr\\b",
+   "careers\\b",
+   "headhunt",
+   "personnel",
+   "hays",
+   "adecco",
+   "randstad",
+   "michael page",
+   "page executive",
+   "robert half",
+   "robert walters",
+   "harnham",
+   "lorien",
+   "marks sattin",
+   "\\breed\\b",
+   "morgan mckinley",
+   "cooper fitch",
+   "targetjobs",
+   "\\btact\\b",
+   "w talent",
+   "digital waffle",
+   "bright purple",
+   "damia",
+   "haystack",
+   "confidential",
+   "investigo",
+   "aquent",
+   "major players",
+   "jobgether",
+   "\\bsalt\\b",
+   "worldhire",
+   "gma consulting",
+   "manpower",
+   "oliver bernard",
+   "harrington starr",
+   "alexander lloyd",
+   "cv-bridge",
+   "why hiring",
+   "get recruited",
+   "mthree",
+   "free-work",
+   "martis",
+   "hyring",
+   "whizz hr",
+   "hirexa",
+   "bayt",
+   "naukri"
+  ],
+  "agency_phrases": [
+   "our client is",
+   "our client,",
+   "our client -",
+   "my client",
+   "we are partnering with",
+   "we're partnering with",
+   "working exclusively with",
+   "on behalf of (?:our|a|an) client",
+   "we are recruiting for",
+   "we're recruiting for",
+   "is recruiting on behalf"
+  ],
+  "flags": {
+   "grad-scheme": [
+    "graduate (?:scheme|programme|program)",
+    "analyst (?:programme|program)",
+    "early careers"
+   ],
+   "visa-offered": [
+    "visa (?:sponsorship|provided|is provided|included)",
+    "employment visa",
+    "relocation (?:package|support|assistance)"
+   ],
+   "needs-long-term-rtw": [
+    "right to work in the uk without (?:any )?(?:time )?restrictions?",
+    "permanent right to work",
+    "indefinite leave to remain",
+    "\\bilr\\b",
+    "settled status"
+   ],
+   "cold-calling": [
+    "cold[- ]call",
+    "outbound calls",
+    "telesales"
+   ],
+   "arabic-plus": [
+    "arabic"
+   ],
+   "python-sql": [
+    "\\bpython\\b",
+    "\\bsql\\b"
+   ],
+   "internship": [
+    "\\bintern(?:ship)?\\b",
+    "placement year",
+    "summer analyst"
+   ],
+   "builder": [
+    "forward[- ]deployed",
+    "write (?:production )?code",
+    "ship (?:production )?software",
+    "build (?:and|&) (?:test|deploy|ship)",
+    "workflow automation",
+    "automate (?:workflows|processes)",
+    "\\bn8n\\b",
+    "\\bapis?\\b",
+    "data pipelines?",
+    "\\bllms?\\b",
+    "ai agents?",
+    "agentic",
+    "prompt engineering"
+   ],
+   "admin-heavy": [
+    "meeting (?:notes|minutes)",
+    "minute[- ]taking",
+    "take (?:the )?minutes (?:of|at|for|during)",
+    "status reports?",
+    "maintain (?:project |comprehensive )?documentation",
+    "clarification registers?",
+    "project invoicing",
+    "\\bcollat(?:e|ing) (?:documents|documentation|tenders?|proposals?)",
+    "data entry"
+   ],
+   "accounting-qual": [
+    "(?:fully |must be (?:a )?|newly )qualified (?:chartered )?accountant",
+    "chartered accountant (?:is )?(?:required|essential)",
+    "\\b(?:acca|cima|aca|cpa|cma)\\b(?:,? (?:or |and |/)?\\b(?:acca|cima|aca|cpa|cma|ca)\\b)*,? (?:qualified|(?:is |are )?(?:required|essential|mandatory))",
+    "(?:must|should) (?:be|hold)[^.\\n]{0,30}\\b(?:acca|cima|aca|cpa)\\b"
+   ],
+   "sales-target": [
+    "sales targets?",
+    "property viewings?",
+    "commission[- ]based",
+    "sales quota"
+   ],
+   "office-only": [
+    "(?:ms|microsoft) office (?:suite|packages?)"
+   ]
+  }
+ },
+ "dedupe": {
+  "_readme": "A job with the same company + title + country as one seen in the last N days is a repost or a duplicate from another site.",
+  "repost_window_days": 30
+ },
+ "triage": {
+  "_readme": "Points used only to sort the triage list; the AI still decides. See docs/configuration.md.",
+  "top_n": 80,
+  "snippet_chars": 220,
+  "title_points": {
+   "graduate": 2,
+   "junior": 1.5,
+   "entry": 1.5,
+   "analyst": 1.5,
+   "consult": 1.5,
+   "\\bai\\b": 1.5,
+   "automation": 1.5,
+   "strategy": 1.5,
+   "business development": 1.5,
+   "commercial": 1,
+   "pricing": 1,
+   "transformation": 1.5,
+   "operations": 0.5,
+   "data": 1,
+   "quant": 0.5,
+   "project control": 1,
+   "associate": 0.5,
+   "intern": -1.5,
+   "assistant": -0.5,
+   "engineer": -0.5,
+   "sales": -1.5,
+   "trainee": 0.5,
+   "forward[- ]deployed": 3,
+   "deployment strategist": 3,
+   "solutions? (?:engineer|consultant)": 1,
+   "workflow": 1.5,
+   "\\bbi\\b|business intelligence": 1,
+   "analytics engineer": 1.5,
+   "\\bbid\\b|tender|proposal": -2,
+   "coordinator": -1.5,
+   "assistant project manager|project administrator|\\bpmo\\b": -2,
+   "accountant|bookkeep|accounts (?:payable|receivable)": -2.5,
+   "real estate|property (?:consultant|agent|advisor|sales)|broker|leasing": -2,
+   "merchandis|\\bplanner\\b|buyer": -1.5,
+   "secretary|receptionist|\\badmin": -2
+  },
+  "city_points": {
+   "dubai": 2.5,
+   "abu dhabi": 2.5,
+   "united arab emirates": 2,
+   "london": 0.5
+  },
+  "flag_points": {
+   "grad-scheme": 1,
+   "visa-offered": 1,
+   "python-sql": 0.5,
+   "cold-calling": -2,
+   "needs-long-term-rtw": -1.5,
+   "internship": -1,
+   "builder": 1.5,
+   "admin-heavy": -1.5,
+   "accounting-qual": -2.5,
+   "sales-target": -1.5,
+   "office-only": -1
+  },
+  "agency_points": -2,
+  "salary_points": {
+   "meets": 1,
+   "below": -1
+  },
+  "salary_targets": [
+   {
+    "currency": "AED",
+    "region": "United Arab Emirates",
+    "per_year": 192000
+   },
+   {
+    "currency": "GBP",
+    "region": "United Kingdom",
+    "location": "london",
+    "per_year": 52000
+   },
+   {
+    "currency": "GBP",
+    "region": "United Kingdom",
+    "per_year": 38000
+   }
+  ]
+ },
+ "sources": {
+  "linkedin": {
+   "enabled": true,
+   "max_results_per_search": 100,
+   "experience_levels": "1,2,3",
+   "posted_within_hours": 24
+  },
+  "reed": {
+   "_readme": "UK only. Needs a free API key from https://www.reed.co.uk/developers/jobseeker (put it in config/secrets.json).",
+   "enabled": false,
+   "results_per_search": 100,
+   "max_age_days": 2
+  },
+  "adzuna": {
+   "_readme": "UK only. Needs a free app_id + app_key from https://developer.adzuna.com (config/secrets.json).",
+   "enabled": false,
+   "results_per_search": 50,
+   "max_age_days": 2
+  },
+  "jooble": {
+   "_readme": "UAE + UK aggregator (includes Bayt, GulfTalent...). Needs a free key: request form at https://jooble.org/api/about (config/secrets.json).",
+   "enabled": false,
+   "results_per_search": 50,
+   "max_age_days": 2,
+   "hosts": {
+    "United Arab Emirates": "ae.jooble.org",
+    "United Kingdom": "uk.jooble.org"
+   },
+   "locations": {
+    "United Arab Emirates": "",
+    "United Kingdom": ""
+   }
+  },
+  "ats": {
+   "_readme": "Direct employer job boards (Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Teamtailor, Pinpoint, Oracle). No key needed. Companies are in config/companies.json. search_terms are used for the big boards (Workday, Oracle) that are searched instead of read in full.",
+   "enabled": true,
+   "max_age_days": 3,
+   "search_terms": [
+    "graduate",
+    "analyst",
+    "consultant",
+    "associate",
+    "AI"
+   ],
+   "workday_pages": 2,
+   "extra_title_exclude": [
+    "^(?!.*\\b(?:graduate|trainee|junior)\\b).*\\bmanager\\b",
+    "\\bstaff\\b",
+    "\\bhead\\b",
+    "\\bbusiness partner\\b",
+    "\\barchitect\\b",
+    "\\bspecialist ii+\\b",
+    "\\b(?:ii|iii|iv)\\b$"
+   ]
+  }
+ }
+}

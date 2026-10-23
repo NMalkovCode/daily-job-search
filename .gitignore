@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# PERSONAL DATA - never commit. Everything below holds your details, CVs,
+# API keys, applications or the jobs you looked at.
+# ---------------------------------------------------------------------------
+
+# your config (the *.example files are the shared templates)
+config/settings.json
+config/secrets.json
+config/companies.json
+config/profile.md
+
+# your CVs (only the README is shared)
+cvs/*
+!cvs/README.md
+
+# everything the tool produces: fetched jobs, picks, letters, tracker, logs, backups
+data/
+output/
+
+# Claude Code's local, per-user settings
+.claude/settings.local.json
+
+# ---------------------------------------------------------------------------
+# environment / temporary
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
